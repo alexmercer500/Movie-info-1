@@ -20,8 +20,12 @@ cd Movie-info-1.0
 npm install
 ```
 ### Create a .env file in the root directory of the project and add your TMDb API key:
+```
 VITE_API_KEY=your_tmdb_api_key_here
+```
 if you need API key, please inform me and I'll provide you with my API key.
 
 ### Start the development server:
+```
 npm run dev
+```
