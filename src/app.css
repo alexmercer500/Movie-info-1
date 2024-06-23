@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus,
+*:active {
+  outline: transparent;
+}
+html {
+  color-scheme: dark;
+}
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+button {
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  cursor: pointer;
+  border: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+body {
+  background-color: #111111;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+}
+
+.list-container {
+  display: grid;
+  --column-count: 2;
+  grid-template-columns: repeat(var(--column-count), 1fr);
+  gap: 1.5rem 0.75rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Common modifier Class */
+.hidden {
+  display: none !important;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+/* Movie and TV Card styling */
+.show-box {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: 200ms linear;
+}
+
+.show-box figure {
+  height: 250px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.show-box figure a {
+  display: block;
+  height: 100%;
+}
+
+.show-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.show-info {
+  margin-top: 0.75rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.show-info a {
+  font-size: 14px;
+}
+
+.show-info .show-date {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.show-info .show-date span {
+  min-width: 40px;
+  text-align: center;
+  font-size: 14px;
+  padding: 2px 8px;
+  border-radius: 5px;
+  border: 1px solid;
+}
+
+/* Pagination Styling */
+.page-numbers {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+  width: 100%;
+  margin-inline: auto;
+  padding-block: 3.5rem 2.5rem;
+}
+
+.page-numbers .pagination {
+  display: none;
+}
+
+.page-numbers .pagination ul {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.page-numbers a,
+.page-numbers button,
+.mov-guide div button {
+  padding: 5px 10px;
+  background-color: #ffe400;
+  width: 100px;
+  border-radius: 0.25rem;
+  transition: box-shadow 50ms;
+  color: #000000;
+}
+
+.pagination ul li a,
+.pagination ul li button {
+  display: block;
+  width: 40px;
+  color: #000000;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: #ffe400;
+  display: grid;
+  place-content: center;
+}
+
+.page-numbers a:disabled,
+.page-numbers button:disabled,
+.pagination ul li a:disabled,
+.pagination ul li button:disabled {
+  background-color: #ffe6004d;
+  cursor: unset;
+}
+
+.page-numbers a:hover,
+.pagination ul li a:hover {
+  box-shadow: 0 0 10px #ffe400;
+}
+
+@media (min-width:500px) {
+  .show-box figure {
+    height: 320px;
+  }
+
+  .list-container {
+    --column-count: 3;
+    gap: 1.25rem;
+  }
+}
+
+@media (min-width:800px) {
+  .page-numbers .pagination {
+    display: block;
+  }
+
+  .page-numbers {
+    padding-top: 0;
+  }
+  .list-container {
+    --column-count: 4;
+    gap: 1.25rem;
+  }
+}
+@media (min-width:1000px) {
+  .list-container {
+    --column-count: 5;
+  }
+}
+
+@media (hover:hover) {
+  .show-box:hover {
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.199);
+  }
+
+  .show-box figure::before {
+    content: "";
+    position: absolute;
+    inset: 100% 0 0 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    transition: inset 200ms linear;
+  }
+
+  .show-box:hover figure::before {
+    inset: 0;
+  }
+}
